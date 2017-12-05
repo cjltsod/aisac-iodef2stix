@@ -1,11 +1,12 @@
+import os
+import traceback
+
 import jnius_config
-jnius_config.set_classpath('.', r'/Users/tsod/projects/iodef2stix/java_class/*')
+jnius_config.set_classpath('.', os.path.join(os.getcwd(), r'./java_class/*'))
 
 import jnius
 from jnius import autoclass
 
-import os
-import traceback
 
 FileUtils = autoclass('org.apache.commons.io.FileUtils')
 STIXPackage = autoclass('org.mitre.stix.stix_1.STIXPackage')
